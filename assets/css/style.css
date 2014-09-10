@@ -16,3 +16,10 @@ body {
 	position:fixed;
 	z-index: 1;
 }
+
+#firstvideo {
+	position: relative;
+	margin-top: -28.5%;
+	
+
+}
