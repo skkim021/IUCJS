@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="iucApp">
 <head>
 	<title>IUC - International University Connection</title>
 	<!-- Links -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css"/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="assets/vendors/jquery.easings.min.js"></script>
 	<script type="text/javascript" src="assets/vendors/jquery.slimscroll.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"></link>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 	<!--End Links-->
 
 	<!-- Our Files-->
@@ -17,41 +21,41 @@
 
 </head>
 <body>
-	<!-- Menu Section -->
-<!-- 	<ul id="menu">
-	<li data-menuanchor="firstSlide"><a href="#firstSlide">
-</a>
-
-	</li>
-	<li data-menuanchor="secondSlide"><a href="#secondSlide">Second slide</a></li>
-	<li data-menuanchor="thirdSlide"><a href="#thirdSlide">Third slide</a></li>
-	<li data-menuanchor="fourthSlide"><a href="#fourthSlide">Fourth slide</a></li>
-	</ul> -->
-	<!-- End Menu-->
-
 	<!-- Full Page Section-->
-	<div id="fullpage">
-	    <div class="section center">
-	    	<div id="firstvideo">
-			  <iframe width="1280" height="520" src="http://www.youtube.com/embed/AAbokV76tkU" frameborder="0" allowfullscreen></iframe>
-			</div>  
+	<div id="fullpage" ng-controller="iucCtrl">
+	    <div class="section">
+	    	<div class="page-wrap">
+		    	
+		    	<div class="navbar">
+		    		<a href="index.html"><img id="logo" src="assets/img/logo.png"></img></a>
+		    		<span id="navlinks">
+						<span><a href="account.html">Profile</a></span>
+						<span>|</span>
+						<span><a href="#">Schools</a></span>
+						<span>|</span>
+						<span><a href="#">Upgrade</a></span>
+					</span>
+		    	</div>
+
+		    	<div id="firstVideo">
+				  <iframe width="100%" height="100%" src="http://www.youtube.com/embed/AAbokV76tkU" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div id="homePage" class="full center">
+					<a href="#secondSlide"><button type="button"> Sign Up </button></a>
+					<a href="#thirdSlide"><button type="button"> Sign In </button></a>
+				</div>
+			</div> 
+
+			<!-- Start Footer Section -->
+			<footer class="site-footer">
+				<div class="center" id="about-us">
+					<span><a href="#">About Us</a></span>
+					<span>|</span>
+					<span><a href="#">Contact Us</a></span>
+				</div>
+			</footer>	
+			<!-- End Footer Section -->
 		</div>
-	<hr>
-	<div id="elevator">
-	<h3>Elevator Statement</h3>
-	</div>	
-	<div class="section center">Pick your character:</div>
-	    <div class="section center">
-    	    <div class="slide" id="slide1"> 
-    	    
-
-
-    	    </div>
-		    <div class="slide" id="slide2"> <img src="assets/img/venus.png"/> </div>
-		    <div class="slide" id="slide3"> <img src="assets/img/mars.png"/> </div>
-		    <div class="slide" id="slide4"> <img src="assets/img/tuxedo.png"/> </div>
-	    </div>
-	    <div class="section">Time to fight for justice!</div>
 	</div>
 	<!-- End Full Page -->
 
