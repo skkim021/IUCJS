@@ -48,6 +48,12 @@ body a:hover {
 	bottom: 0;
 }
 
+#first-logo {
+	position: absolute;
+	z-index: 1;
+	height: 25%;
+}
+
 #logo {
 	height: 100%;
 }
