@@ -19,6 +19,10 @@
 .link:hover {
 	color: blue;
 }
+
+.font-size-twenty {
+	font-size: 20px;
+}
 /* END HELPER CLASSES */
 
 * {
@@ -26,6 +30,7 @@
 }
 
 html, body {
+	width: 100%;
 	height: 100%;
 	font-family: 'Passion One', cursive;
 }
@@ -66,6 +71,10 @@ body a:hover {
 	font-size: 20px;
 }
 
+#account .fp-tableCell {
+	display:block;
+}
+
 .page-wrap {
 	min-height: 100%;
 	margin-bottom: -142px;
@@ -79,6 +88,10 @@ body a:hover {
 .page-wrap a {
 	text-decoration: none;
 	color: black;
+}
+
+.content {
+	display: block;
 }
 
 #menu {

@@ -27,7 +27,6 @@ app.controller('fetchCtrl', ['$scope', '$http', '$templateCache', function($scop
 			$scope.method = method;
 			$scope.url = url;
 		}
-
 }]);
 
 $(document).ready(function() {

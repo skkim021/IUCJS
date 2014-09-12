@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="iucApp">
 <head>
 	<title>IUC - My Account</title>
 
 	<!-- Links -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css"/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="assets/vendors/jquery.easings.min.js"></script>
-	<script type="text/javascript" src="assets/vendors/jquery.slimscroll.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"></link>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
@@ -23,8 +19,8 @@
 <body>
 
 	<!-- Full Page Section-->
-	<div id="fullpage" ng-controller="iucCtrl">
-	    <div class="section">
+	<div ng-controller="iucCtrl" style="margin-top:30px;">
+	    <div class="full" id="account" style="display:block">
 	    	<div class="page-wrap">
 		    	<div class="navbar">
 		    		<a href="index.html"><img id="logo" src="assets/img/logo.png"></img></a>
@@ -36,17 +32,38 @@
 						<span><a href="#">Upgrade</a></span>
 					</span>
 		    	</div>
-			</div> 
+			 
+		    	<pre> Inside iuc controller: {{test}} </pre>
 
-			<!-- Start Footer Section -->
-			<footer class="site-footer">
-				<div class="center" id="about-us">
-					<span><a href="#">About Us</a></span>
-					<span>|</span>
-					<span><a href="#">Contact Us</a></span>
+				<div class="content" ng-controller="fetchCtrl">
+					<select ng-model="method">
+						<option> GET </option>
+						<option> JSONP </option>
+					</select>
+
+					<input type="text" ng-model="url" size="80"/>
+					
+					<button id="fetchbtn" ng-click="fetch()">fetch</button><br>
+					
+					<button id="samplegetbtn" ng-click="updateModel('GET', 'http-hello.html')">Sample GET</button>
+
+					<button id="samplejsonpbtn" ng-click="updateModel('JSONP','https://angularjs.org/greet.php?callback=JSON_CALLBACK&name=Super%20Hero')">
+						Sample JSONP
+					</button>
+
+					<pre> http status code: {{status}} </pre>
+					<pre> http response data: {{data}} </pre>
+					<div>
+						<ul class="font-size-twenty" ng-repeat="thing in data">
+							<li>
+								{{ thing }}
+							</li>
+						</ul>
+					</div>
 				</div>
-			</footer>	
-			<!-- End Footer Section -->
+
+			</div>
+
 		</div>
 	</div>
 	<!-- End Full Page -->
