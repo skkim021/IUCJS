@@ -6,7 +6,7 @@ app.controller('iucCtrl', function($scope) {
 
 app.controller('fetchCtrl', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
 		$scope.method = 'GET';
-		$scope.url = 'schools.html';
+		$scope.url = 'http-hello.html';
 
 		$scope.fetch = function() {
 			$scope.code = null;
