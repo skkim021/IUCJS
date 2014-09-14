@@ -67,14 +67,48 @@
 					<pre> http status code: {{status}} </pre>
 					<pre> http response data: {{data}} </pre>
 					
-					<!-- Laurie: Modify Code Here for Layouts -->
-					<div>
-						<ul class="font-size-twenty" ng-repeat="thing in data">
+<!-- LAURIE - START HERE -->
+					<!-- For List of Students -->
+					<div class="center">
+						<h2> Students </h2>
+						<ul class="font-size-twenty" ng-repeat="thing in data.students">
 							<li>
-								{{ thing }}
+								{{ thing.first_name }} - {{ thing.email }}
 							</li>
 						</ul>
 					</div>
+
+					<!-- For Individual Students -->
+					<div class="center">
+						<h2> Student Profile </h2>
+						<ul class="font-size-twenty" ng-repeat="thing in data">
+							<li>
+								{{ thing.first_name }} - {{ thing.email }}
+							</li>
+						</ul>
+					</div>
+
+					<!-- For List of Schools -->
+					<div class="center">
+						<h2> Schools </h2>
+						<ul class="font-size-twenty" ng-repeat="thing in data.schools">
+							<li>
+								{{ thing.name }} - {{ thing.email }}
+							</li>
+						</ul>
+					</div>
+
+					<!-- For Individual Schools -->
+					<div class="center">
+						<h2> School Profile </h2>
+						<ul class="font-size-twenty" ng-repeat="thing in data">
+							<li>
+								{{ thing.name }}
+								<img ng-src="{{thing.picture}}" width="50px"/>
+							</li>
+						</ul>
+					</div>
+<!-- LAURIE - END HERE -->
 				</div>
 
 			</div>
