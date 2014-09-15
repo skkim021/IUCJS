@@ -1,0 +1,35 @@
+<div>
+<div class="search">
+	<h1>Schools</h1>
+	<label>Search Schools</label>
+	<input type="text" ng-model="name" >
+	
+	<label>Sort by:
+		<select ng-model="orderSchools">
+			<option value="name" selected>Name</option>
+			<option value="email">Email</option>
+		</select>
+	</label>
+	<br>
+	<label>
+		<input type="radio" ng-model="direction" name="direction" checked>
+		Ascending
+	</label>
+	<label>	
+		<input type="radio" ng-model="direction" name="direction" value="reverse" >
+		Descending
+	</label>
+	<p>&nbsp;	There are {{schools.length}} items in schools.json file</p>
+</div>
+	
+	<ul> 
+		<li class="itemHolder" ng-repeat="school in schools | filter:name | orderBy:orderSchools:direction" style="list-style-type:none">
+			<a href="#/schoolprofile/{{schools.indexOf(school)}}">
+				<div>
+					<h3> {{school.name}} </h3>
+					<img src="{{school.picture}}" width="100px"/>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>

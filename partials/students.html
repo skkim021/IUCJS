@@ -1,0 +1,41 @@
+<div>
+<div class="search">
+	<h1>Students</h1>
+	<label>Search Students</label>
+	<input type="text" ng-model="first_name" >
+	
+	<label>Sort by:
+		<select ng-model="orderStudents">
+			<option value="last_name" selected>Last Name</option>
+			<option value="email">Email</option>
+		</select>
+	</label>
+	<br>
+	<label>
+		<input type="radio" ng-model="direction" name="direction" checked>
+		Ascending
+	</label>
+	<label>	
+		<input type="radio" ng-model="direction" name="direction" value="reverse" >
+		Descending
+	</label>
+	<p>&nbsp;	There are {{students.length}} items in students.json file</p>
+</div>
+	
+
+	<form id="student_form" ng-submit="addStudent()">
+        <input type="text" id="new_student_first_name" name="newStudentFirstName" ng-model="newFirstName" placeholder="First Name"></br>
+        <input type="text" id="new_student_last_name" name="newStudentLastName" ng-model="newLastName" placeholder="Last Name"></br>
+        <input type="button" id="contact_submit_btn" value="Add Student" class="btn btn-primary">               
+    </form>
+
+	<ul> 
+		<li class="itemHolder" ng-repeat="student in students | filter:first_name | orderBy:orderStudents:direction" style="list-style-type:none">
+			<a href="#/studentprofile/{{students.indexOf(student)}}">
+				<div>
+					<h3> {{student.first_name }} {{student.last_name }} - {{ student.email }} </h3>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
