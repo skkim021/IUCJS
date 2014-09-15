@@ -3,6 +3,11 @@ var iucControllers = angular.module("iucControllers", []);
 // ACTUAL LINK:
 // http://www.corsproxy.com/iuc-backend.herokuapp.com/schools/1.json
 
+// Home.
+iucControllers.controller("homeCtrl", ['$scope', '$http', function($scope, $http) {
+
+}]);
+
 // Students.
 iucControllers.controller("studentsCtrl", ['$scope', '$http', function($scope, $http) {
 	$http.get('assets/js/students.json').
