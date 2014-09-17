@@ -1,41 +1,63 @@
-<div>
+
+<h1 class="studentTitle"><center>&nbsp;International University Connection<center></h1>
+<hr>
+	<!-- Small modal -->
+<div style="text-align:right; margin-top:-120px; margin-right:20px"><button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Add Student</button></div>
 <div class="search">
-	<h1>Students</h1>
-	<label>Search Students</label>
-	<input type="text" ng-model="first_name" >
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <form id="student_form" ng-submit="addStudent()"
 	
-	<label>Sort by:
-		<select ng-model="orderStudents">
-			<option value="last_name" selected>Last Name</option>
-			<option value="email">Email</option>
-		</select>
-	</label>
-	<br>
-	<label>
-		<input type="radio" ng-model="direction" name="direction" checked>
-		Ascending
-	</label>
-	<label>	
-		<input type="radio" ng-model="direction" name="direction" value="reverse" >
-		Descending
-	</label>
-	<p>&nbsp;	There are {{students.length}} items in students.json file</p>
-</div>
-	
+<form id="student_form" ng-submit="addStudent()">
+    <fieldset>
+        <legend>Please add a new student</legend>
 
-	<form id="student_form" ng-submit="addStudent()">
-        <input type="text" id="new_student_first_name" name="newStudentFirstName" ng-model="newFirstName" placeholder="First Name"></br>
-        <input type="text" id="new_student_last_name" name="newStudentLastName" ng-model="newLastName" placeholder="Last Name"></br>
-        <input type="button" id="contact_submit_btn" value="Add Student" class="btn btn-primary">               
+        <label for="First Name"></label>
+        <input id="new_student_first_name" name="newStudentFirstName" ng-model="newFirstName" placeholder="First Name">
+
+        <label for="Last Name"></label>
+        <input id="new_student_last_name" name="newStudentLastName" ng-model="newLastName" placeholder="Last Name">
+
+     		<button type="submit" class="pure-button pure-button-primary">Submit</button> 
+    </fieldset>
+</form>
+
+
+	   <!--      <div><input type="text1" id="new_student_first_name" name="newStudentFirstName" ng-model="newFirstName" placeholder="First Name">
+	       </div>
+	        <div><input type="text2" id="new_student_last_name" name="newStudentLastName" ng-model="newLastName" placeholder="Last Name">
+	       </div>
+	        <div><button type="submit" class="pure-button pure-button-primary">Submit</button>
+	        </div>  -->      
     </form>
-
-	<ul> 
-		<li class="itemHolder" ng-repeat="student in students | filter:first_name | orderBy:orderStudents:direction" style="list-style-type:none">
-			<a href="#/studentprofile/{{students.indexOf(student)}}">
-				<div>
-					<h3> {{student.first_name }} {{student.last_name }} - {{ student.email }} </h3>
-				</div>
-			</a>
-		</li>
-	</ul>
+    </div>
+  </div>
 </div>
+
+<div class="searchTable">
+	<h4>These are the students that matches with your school!</h4>
+	
+		<center><table class="pure-table pure-table-horizontal">
+		    <thead>
+		        <tr>
+		            <th>First Name</th>
+		            <th>Last Name</th>
+		            <th>Email</th>
+		        </tr>
+		    </thead>
+
+		    <tbody>
+		        <tr class="itemHolder" ng-repeat="student in students | filter:first_name | orderBy:orderStudents:direction" style="list-style-type:none">
+					
+		            <td><a href="#/studentprofile/{{students.indexOf(student)}}"> {{student.first_name }}</td>
+		            <td><a href="#/studentprofile/{{students.indexOf(student)}}">{{student.last_name }}</td>
+		            <td><a href="#/studentprofile/{{students.indexOf(student)}}">{{ student.email }}</td>
+		        </tr>
+		    </tbody>
+		</table>
+		</center>
+</div>
+
+		<!-- 	<p>&nbsp;There are {{students.length}} students in the database</p> -->
+
