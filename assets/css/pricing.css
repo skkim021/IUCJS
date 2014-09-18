@@ -6,6 +6,8 @@ body {
     color: #526066;
 }
 
+
+
 h2, h3 {
     letter-spacing: 0.25em;
     text-transform: uppercase;
@@ -164,7 +166,14 @@ p {
     border-bottom: 1px solid #e7e7e7;
 }
 
+.studentTitle {
+    font-family: 'Bree Serif', serif;
+}
 
+.studentName {
+    margin-left: 80%;
+    margin-top: -3%;
+}
 /*
  * -- PRICING TABLE BUTTON --
  * Styles for the "Choose" button at the bottom of a pricing table.
@@ -186,14 +195,20 @@ p {
 }
 
 .footer {
-    background: #111;
-    color: #888;
+    background: #08639C;
+    color: white;
     text-align: center;
 }
     .footer a {
         color: #ddd;
     }
 
+.footer{
+    width:100%;
+    position:fixed;
+    bottom:0;
+
+}
 
 
 /*
@@ -223,4 +238,8 @@ p {
     .banner-head {
         font-size: 3em;
     }
+}
+
+.searchTable {
+    margin-top: 5%;
 }
