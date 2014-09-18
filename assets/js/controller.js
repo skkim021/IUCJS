@@ -8,40 +8,83 @@ iucControllers.controller("homeCtrl", ['$scope', '$http', function($scope, $http
 
 }]);
 
+// NGResource Test.
+iucControllers.controller('resourceCtrl', function($scope, Student) {
+	console.log("Inside controller");
+	$scope.id = 4;
+	
+	var student = Student.get({id: $scope.id }, function() {
+		console.log("student #1: " + student);
+	}); // get() returns a single entry
+
+	var students = Student.query(function() {
+		console.log("students: " + students);
+	}); // query() returns all entries
+
+	$scope.student = student;
+	$scope.students = students;
+
+	$scope.getStudent = function() {
+		console.log("inside function get students");
+		student = Student.get({id: $scope.id }, function() {
+			console.log("student #1: " + student);
+		}); // get() returns a single entry
+		$scope.student = student;
+	};
+
+	// Post
+	$scope.addStudent = function() {
+		console.log("inside function add student");
+		console.log("prev student: " + $scope.student);
+		$scope.student = new Student();
+		$scope.student.first_name = "Jon";
+		console.log($scope.student);
+		
+		Student.save($scope.student);
+	};
+
+});
+
 // Students.
 iucControllers.controller("studentsCtrl", ['$scope', '$http', function($scope, $http) {
-	$http.get('assets/js/students.json').
+	$http.get('http://0.0.0.0:3000/api/students').
 		success(function(data) {
-			$scope.students = data.students;
+			$scope.students = data;
 			$scope.orderStudents = 'last_name';
 		}).
 		error(function(data) {
 			$scope.data = data || "Request failed";
 		});
 
-	// $scope.addStudent = function() {
-	// 	var newStudent = {
-	// 		first_name: $scope.newStudentFirstName,
-	// 		last_name: $scope.newStudentLastName
-	// 	};
-
-	// 	var ns = new Students({ student: newStudent });
-	// 	ns.$create(function() {
-	// 		$scope.students.push(ns);
-	// 		$scope.newStudentFirstName = "";
-	// 		$scope.newStudentLastName = "";
-	// 	})
-	// }
-}
-// studentsCtrl.$inject = ['$scope', '$http', 'Students'];
-
-]);
+	// Post
+	$scope.addStudent = function() {
+		console.log("inside function add student");
+		
+		$scope.student = new Object();
+		$scope.student.first_name = "Ruby";
+		console.log("created new student");
+		
+		$http({
+		    url: "http://0.0.0.0:3000/api/students",
+		    dataType: "json",
+		    method: "POST",
+		    data: {"first_name": "Ruby"},
+		    headers: {
+		        "Content-Type": "application/json"
+		    }
+		}).success(function(response){
+		    $scope.response = response;
+		}).error(function(error){
+		    $scope.error = error;
+		});
+	};
+}]);
 
 iucControllers.controller("studentProfileCtrl", ['$scope', '$http', '$routeParams',
 	function($scope, $http, $routeParams) {
-	$http.get('assets/js/students.json').
+	$http.get('http://0.0.0.0:3000/api/students').
 		success(function(data) {
-			$scope.students = data.students;
+			$scope.students = data;
 			$scope.whichStudent = $routeParams.studentID;
 		}).
 		error(function(data) {
@@ -51,7 +94,7 @@ iucControllers.controller("studentProfileCtrl", ['$scope', '$http', '$routeParam
 
 // Schools.
 iucControllers.controller("schoolsCtrl", ['$scope', '$http', function($scope, $http) {
-	$http.get('assets/js/schools.json').
+	$http.get('http://0.0.0.0:3000/api/schools').
 		success(function(data) {
 			$scope.schools = data.schools;
 			$scope.orderSchools = 'name';
@@ -63,7 +106,7 @@ iucControllers.controller("schoolsCtrl", ['$scope', '$http', function($scope, $h
 
 iucControllers.controller("schoolProfileCtrl", ['$scope', '$http', '$routeParams',
 	function($scope, $http, $routeParams) {
-	$http.get('assets/js/schools.json').
+	$http.get('http://0.0.0.0:3000/api/schools').
 		success(function(data) {
 			$scope.schools = data.schools;
 			$scope.whichSchool = $routeParams.schoolID;

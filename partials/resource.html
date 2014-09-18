@@ -1,0 +1,13 @@
+<div>
+	<label> Select Student ID</label>
+	<input ng-model="id"></input>
+
+	<button ng-click="getStudent()">Get Students</button>
+
+	<p>Student: {{ student }}</p>
+
+	<p>Students:</p>
+	<p ng-repeat="student in students">{{ student }}</p>
+
+	<button ng-click="addStudent()"> Add Student </button>
+</div>

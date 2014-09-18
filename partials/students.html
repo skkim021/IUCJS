@@ -23,11 +23,12 @@
 </div>
 	
 
-	<form id="student_form" ng-submit="addStudent()">
+<!-- 	<form id="student_form" ng-submit="addStudent()">
         <input type="text" id="new_student_first_name" name="newStudentFirstName" ng-model="newFirstName" placeholder="First Name"></br>
         <input type="text" id="new_student_last_name" name="newStudentLastName" ng-model="newLastName" placeholder="Last Name"></br>
         <input type="button" id="contact_submit_btn" value="Add Student" class="btn btn-primary">               
-    </form>
+    </form> -->
+    <button ng-click="addStudent()"> Add Student </button>
 
 	<ul> 
 		<li class="itemHolder" ng-repeat="student in students | filter:first_name | orderBy:orderStudents:direction" style="list-style-type:none">

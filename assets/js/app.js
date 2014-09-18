@@ -1,4 +1,4 @@
-var iucApp = angular.module('iucApp', ['ngRoute', 'iucControllers']);
+var iucApp = angular.module('iucApp', ['ngResource', 'ngRoute', 'iucControllers']);
 
 iucApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
@@ -22,15 +22,16 @@ iucApp.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'partials/schoolprofile.html',
 		controller: 'schoolProfileCtrl'
 	}).
+	when('/resource', {
+		templateUrl: 'partials/resource.html',
+		controller: 'resourceCtrl'
+	}).
 	otherwise({
 		redirectTo: '/home'
 	});
 }]);
 
-// iucApp.factory('students', function($resource) {
-// 	var studentsService = $resource('/students/:student_id', {}, {
-// 		'create': { method: 'POST'},
-// 		'index': { method: 'GET', isArray: true },
-// 	});
-// 	return studentsService;
-// });
+iucApp.factory('Student', function($resource) {
+	console.log("Inside factory");
+	return $resource('http://0.0.0.0:3000/api/students/:id');
+});
