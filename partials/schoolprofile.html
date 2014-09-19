@@ -1,12 +1,11 @@
-<h2>School Profile</h2>
+<div class="schoolProfile center" ng-model="schools">
 
-<div class="schoolProfile" ng-model="schools">
+<h1>{{ schools[whichSchool].name }}</h1>
+
 	<div>
-		<h2> {{ schools[whichSchool].name }} </h2>
+		<img width="500px" ng-src="{{ schools[whichSchool].picture }}"/><br/><br/>
 
-		<p> {{ schools[whichSchool].email }} </p>
-
-		<img width="200px" ng-src="{{ schools[whichSchool].picture }}"/><br/>
+		<p>Austin four loko you probably haven't heard of them sustainable. Cred Tonx freegan, Intelligentsia Odd Future blog Austin asymmetrical tote bag scenester try-hard keytar XOXO PBR&B. Stumptown chambray 90's Brooklyn. Chillwave organic art party, trust fund Blue Bottle hella cred four loko normcore 90's Etsy squid. Pitchfork slow-carb 90's, selvage Portland cardigan fingerstache Banksy occupy stumptown Shoreditch salvia Schlitz lo-fi put a bird on it. Scenester actually banjo, pop-up Wes Anderson tofu Shoreditch synth hoodie Austin banh mi. Kickstarter tousled art party brunch lo-fi.</p>
 
 		<a href="index.html#/schools" class="link"> << Go Back to Search </a>
 	</div>

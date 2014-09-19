@@ -11,6 +11,10 @@ input {
 	width: 100%;
 }
 
+.schoolProfile {
+	margin: 50px;
+}
+
 #signup-title {
 	padding-top: 40px;
 	font-size: 2em;
