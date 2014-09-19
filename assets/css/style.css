@@ -14,8 +14,18 @@ input {
 #signup-title {
 	padding-top: 40px;
 	font-size: 2em;
-	color: white;
-	text-shadow: 2px 2px #000;
+	
+}
+
+.banner2 {
+    background: transparent url('http://www.stat.harvard.edu/SRC2012/library0.jpg') 0 0 no-repeat fixed;
+    text-align: center;
+   
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.stat.harvard.edu/SRC2012/library0.jpg', sizingMethod='scale');
+    height: auto;
+    width: 100%;
+  
+   
 }
 
 #criteria1 {
