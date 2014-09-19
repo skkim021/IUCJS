@@ -93,13 +93,12 @@ p {
 .schools {
     margin-left: 5%;
     margin-right: 5%;
-   
 }
 
 .schoolsBlock {
     border-style: solid;
     border-radius: 5px;
-     border-left: 1%;
+    border-left: 1%;
 }
 
 
@@ -124,7 +123,7 @@ p {
 }
 
 .studentTitle {
-    font-family: 'Bree Serif', serif;
+    /*font-family: 'Bree Serif', serif;*/
 }
 
 .studentName {

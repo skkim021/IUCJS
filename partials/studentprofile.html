@@ -11,11 +11,12 @@
 	</h3>
 
 
-	<form id="edit-form" ng-submit="updateStudent(editStudents[whichStudent])">
+	<form id="criteria1" class="center" ng-submit="updateStudent(editStudents[whichStudent])">
 		<label> First Name: </label>
 		<input id="first-name" ng-model="editStudents[whichStudent].first_name" type="text"> </input>
 		<label> Last Name: </label>
 		<input id="last-name" ng-model="editStudents[whichStudent].last_name" type="text"> </input>
+		<br/><br/>
 		<input id="submit" type="submit" value="Update Info" class="btn btn-large btn-primary"></input>                  
 	</form>
 
