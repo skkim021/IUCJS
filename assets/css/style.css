@@ -1,8 +1,30 @@
 /* Helper Classes */
-
 .center {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+}
+/* End Helper Classes */
+
+input {
+	width: 100%;
+}
+
+#criteria1 {
+	background-color: #3EADFF;
+	width: 300px;
+	padding: 20px;
+	border-radius: 10px;
+	font-size: 1.5em;
+}
+
+.button {
+	background-color: #E03843;
+}
+
+@media all and (max-width: 1000px) {
+	#criteria1 {
+		width: 300px;
+	}
 }
