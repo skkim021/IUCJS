@@ -6,6 +6,10 @@ iucApp.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'partials/home.html',
 		controller: 'homeCtrl'
 	}).
+	when('/criteria1', {
+		templateUrl: 'partials/criteria1.html',
+		controller: 'criteria1Ctrl'
+	}).
 	when('/students', {
 		templateUrl: 'partials/students.html',
 		controller: 'studentsCtrl'

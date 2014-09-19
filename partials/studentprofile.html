@@ -1,60 +1,24 @@
-<!-- <h2><center>Profile<center></h2> -->
-<head>
-<title>Student Profile</title>
-<link rel="stylesheet" href="assets/css/animate.min.css">
-<script src="assets/js/jquery-1.8.1.min.js"></script>
-<script src="assets/js/html5shiv.js"></script>
-<script src="assets/js/flip-carousel.js"></script>
-<link href="assets/css/flip-carousel.css" rel="stylesheet">
-</head>
+<h1 class="studentTitle" style="margin-left:10px;"> 
+	<a href="#" class="button animated flipInY">International University Connection</a>
+</h1>
 
-<h1 class="studentTitle"> <a href="#" class="button animated flipInY">&nbsp;&nbsp;International University Connection</a></h1>
 <div class="studentProfile" ng-model="students">
 	<div>
-	<h4 class="studentName" style="color: white;"> Welcome {{ students[whichStudent].first_name }} {{ students[whichStudent].last_name }} </h4>
-	<!-- 	<p><center> You have signed in at{{ students[whichStudent].email }} <center></p> -->
+		<h4 class="studentName" style="color: red;"> 
+			Welcome {{ students[whichStudent].first_name }} {{ students[whichStudent].last_name }} 
+		</h4>
 	</div><br>
-		<h3 style="color: white;"><center>
+
+	<h3 class="center" style="color: red;">
 		Congratulations, you match with the following schools!
-		<center></h3>
-			<article title="item1"><h3> Stanford</h3> <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBuBvJ-rGpJkK2VC9QDp01JfostEtN0kfbgwvQZNk93_hurpzR" style="width:304px;height:228px"> </span></article>
-			<article title="item2"><h3>Harvard</h3><span> <img src="http://harvardpolitics.com/blog/wp-content/uploads/2014/04/Seo-Endpaper-Picture-4-23.jpg" style="width:304px;height:228px"></span> </article>
-			<article title="item3"> <h3>UCLA</h3> <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJVgWzBuYgt6yimgyd0hKEm8hsDNLeOfmg3DE5Z_yK90VIE9ou" style="width:304px;height:228px"></span></article>
-			<article title="item4"><h3>CalTech</h3><span> <img src="http://www.gg.caltech.edu/Images/BI-i.gif" style="width:304px;height:228px"></span></article>
-			<!-- <article title="item5"> Item 5 </article>
-			<article title="item6"> Item 6 </article> -->
+	</h3>
 
+	<article ng-repeat="school in schools">
+		<h3>{{school.name}}</h3> 
+		<span>
+			<img src="{{ school.picture }}" style="width:304px;height:228px"/> 
+		</span>
+	</article>
 
-			<!-- <div>&nbsp;
-				<div class="Stanford">Stanford<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBuBvJ-rGpJkK2VC9QDp01JfostEtN0kfbgwvQZNk93_hurpzR" style="width:304px;height:228px"></div><br>
-				<div class="Harvard">Harvard <img src="http://harvardpolitics.com/blog/wp-content/uploads/2014/04/Seo-Endpaper-Picture-4-23.jpg" style="width:304px;height:228px"></div><br>
-				<div class="Ucla"> UCLA<img src="http://www.math.ucla.edu/~pak/ucla.jpg" style="width:304px;height:228px"></div><br>
-				<div class="Caltech"> Caltech <img src="http://www.gg.caltech.edu/Images/BI-i.gif" style="width:304px;height:228px"></div><br>
-			</div> -->
-
-					<script>
-						$('article').flipcarousel({
-							pagination : false,
-							loader : true,
-							itemsperpage: 3,
-							randomizer: 0.7
-						});
-					</script>
-
-				<div>
-				<a href="index.html#/students" class="link"> << Go Back to Search </a>
-				</div>
-
-
-<!-- 	<section class="container">
-		<div id="carousel">
-			<p>Stanford  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBuBvJ-rGpJkK2VC9QDp01JfostEtN0kfbgwvQZNk93_hurpzR" style="width:304px;height:228px"></p>
-			<p>Harvard <img src="http://harvardpolitics.com/blog/wp-content/uploads/2014/04/Seo-Endpaper-Picture-4-23.jpg" style="width:304px;height:228px"></p>
-			<p>UCLA  <img src="http://www.math.ucla.edu/~pak/ucla.jpg" style="width:304px;height:228px"></p>
-			<p>Caltech <img src="http://www.gg.caltech.edu/Images/BI-i.gif" style="width:304px;height:228px"></p>
-		</div>
-	</section>
-
-	<div>
-		<a href="index.html#/students" class="link"> << Go Back to Search </a>
-	</div> -->
+<!-- 	<a href="index.html#/students" class="link"> << Go Back to Search </a> -->
+</div>

@@ -2,9 +2,34 @@
 <h1 class="studentTitle">International University Connection</h1>
 <hr/><br/>
 <!-- Small modal -->
-<div style="text-align:right; margin-top:-140px; margin-right:20px; padding:0px 0px 0px 0px;">
+<!-- <div style="text-align:right; margin-top:-140px; margin-right:20px; padding:0px 0px 0px 0px;">
 	<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" ng-click="addStudent()">Add Student</button>
+</div> -->
+
+ <!-- Small modal -->
+<div style="text-align:right; margin-top:-140px; margin-right:20px; padding:0px 0px 0px 0px;">
+  <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Add Student</button>
 </div>
+
+<div class="search">
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<form id="student_form" ng-submit="addStudent()">
+					<fieldset>
+						<label type="newStudent" size="30">Please add a new student</label>
+						<div class="form-inline" role="form"><br/>
+							<input type="text" size="30" ng-model="newFirstName" placeholder="First Name"><br/>
+							<input type="text" size="30"ng-model="newLastName" placeholder="Last Name">
+						</div><br/>
+						<button type="submit" class="pure-button pure-button-primary">Submit</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <!-- Test Code -->
 <!-- 	<form id="student_form" ng-submit="addStudent()">
