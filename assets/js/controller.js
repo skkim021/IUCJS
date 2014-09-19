@@ -4,9 +4,9 @@ var iucControllers = angular.module("iucControllers", []);
 // http://www.corsproxy.com/iuc-backend.herokuapp.com/schools/1.json
 
 // Home.
-iucControllers.controller("homeCtrl", ['$scope', '$http', function($scope, $http) {
+iucControllers.controller("homeCtrl", function($scope, $http) {
 
-}]);
+});
 
 // Criteria1.
 iucControllers.controller("criteria1Ctrl", function($scope, Student, $location) {
@@ -69,81 +69,37 @@ iucControllers.controller('resourceCtrl', function($scope, Student) {
 });
 
 // Students.
-iucControllers.controller("studentsCtrl", ['$scope', '$http', function($scope, $http) {
-	$http.get('http://0.0.0.0:3000/api/students').
-		success(function(data) {
-			$scope.students = data;
-			$scope.orderStudents = 'last_name';
-		}).
-		error(function(data) {
-			$scope.data = data || "Request failed";
-		});
+iucControllers.controller("studentsCtrl", function($scope, Student) {
+	var students = Student.query();
+	$scope.students = students;
+	$scope.orderStudents = 'last_name';
+});
 
-	// Post
-	$scope.addStudent = function() {
-		console.log("inside function add student");
-		
-		$scope.student = new Object();
-		$scope.student.first_name = "Ruby";
-		console.log("created new student");
-		
-		$http({
-		    url: "http://0.0.0.0:3000/api/students",
-		    dataType: "json",
-		    method: "POST",
-		    data: {"first_name": "Ruby"},
-		    headers: {
-		        "Content-Type": "application/json"
-		    }
-		}).success(function(response){
-		    $scope.response = response;
-		}).error(function(error){
-		    $scope.error = error;
-		});
+iucControllers.controller("studentProfileCtrl", function($scope, Student, School, $routeParams) {
+	var students = Student.query();
+	$scope.students = students;
+	$scope.whichStudent = $routeParams.studentID;
+
+	var schools = School.query();
+	$scope.schools = schools;
+	$scope.whichSchool= $routeParams.schoolID;
+
+	$scope.editStudents = students;
+	$scope.updateStudent = function(student) {
+		console.log(student.first_name + " " + student.last_name);
+		student.$update();
 	};
-}]);
-
-iucControllers.controller("studentProfileCtrl", ['$scope', '$http', '$routeParams',
-	function($scope, $http, $routeParams) {
-		$http.get('http://0.0.0.0:3000/api/students').
-			success(function(data) {
-				$scope.students = data;
-				$scope.whichStudent = $routeParams.studentID;
-			}).
-			error(function(data) {
-				$scope.students = data || "Request failed";
-			});
-
-		$http.get('http://0.0.0.0:3000/api/schools').
-			success(function(data) {
-				$scope.schools = data.schools;
-				$scope.orderSchools = 'name';
-			}).
-			error(function(data) {
-				$scope.schools = data || "Request failed";
-			});
-}]);
+});
 
 // Schools.
-iucControllers.controller("schoolsCtrl", ['$scope', '$http', function($scope, $http) {
-	$http.get('http://0.0.0.0:3000/api/schools').
-		success(function(data) {
-			$scope.schools = data.schools;
-			$scope.orderSchools = 'name';
-		}).
-		error(function(data) {
-			$scope.schools = data || "Request failed";
-		});
-}]);
+iucControllers.controller("schoolsCtrl", function($scope, School) {
+	var schools = School.query();
+	$scope.schools = schools;
+	$scope.orderSchools = 'name';
+});
 
-iucControllers.controller("schoolProfileCtrl", ['$scope', '$http', '$routeParams',
-	function($scope, $http, $routeParams) {
-	$http.get('http://0.0.0.0:3000/api/schools').
-		success(function(data) {
-			$scope.schools = data.schools;
-			$scope.whichSchool = $routeParams.schoolID;
-		}).
-		error(function(data) {
-			$scope.schools = data || "Request failed";
-		});
-}]);
+iucControllers.controller("schoolProfileCtrl", function($scope, School, $routeParams) {
+	var schools = School.query();
+	$scope.schools = schools;
+	$scope.whichSchool= $routeParams.schoolID;
+});
