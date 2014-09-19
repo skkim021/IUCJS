@@ -23,8 +23,8 @@ p {
     background: transparent url('http://www.stat.harvard.edu/SRC2012/library0.jpg') 0 0 no-repeat fixed;
     text-align: center;
     background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg', sizingMethod='scale');
-    height: 200px;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.stat.harvard.edu/SRC2012/library0.jpg', sizingMethod='scale');
+    height: 500px;
     width: 100%;
     margin-bottom: 3em;
     display: table;
@@ -92,7 +92,9 @@ p {
 /*************End Button on first page**********************/
 /** -- Layout Styles --*/
 .l-content {
-    margin: 0 auto;
+    margin: 0 2em;
+    margin-bottom: 4em;
+    
 }
 
 .l-box {
@@ -116,6 +118,7 @@ p {
 .information-head {
     color: black;
     font-weight: 500;
+
 }
 
 .footer {
