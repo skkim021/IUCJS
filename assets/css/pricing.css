@@ -15,7 +15,7 @@ h3 {
 }
 
 p {
-    line-height: 1.6em;
+    /*line-height: 1.6em;*/
 }
 
 /******************* Banner Picture on first page********************/
@@ -89,6 +89,23 @@ p {
     right: 0;
     text-align: center;
 }
+/*************Students Profile page**********************/
+.schools {
+    margin-left: 5%;
+    margin-right: 5%;
+   
+}
+
+.schoolsBlock {
+    border-style: solid;
+    border-radius: 5px;
+     border-left: 1%;
+}
+
+
+/*************End of Students Profile page**********************/
+
+
 /*************End Button on first page**********************/
 /** -- Layout Styles --*/
 .l-content {
