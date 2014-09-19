@@ -1,6 +1,7 @@
 var iucApp = angular.module('iucApp', ['ngResource', 'ngRoute', 'iucControllers']);
 
-iucApp.config(['$routeProvider', function($routeProvider) {
+iucApp.config(['$routeProvider', function($routeProvider) { 
+
 	$routeProvider.
 	when('/home', {
 		templateUrl: 'partials/home.html',
@@ -36,6 +37,13 @@ iucApp.config(['$routeProvider', function($routeProvider) {
 }]);
 
 iucApp.factory('Student', function($resource) {
-	console.log("Inside factory");
-	return $resource('http://0.0.0.0:3000/api/students/:id');
+	return $resource('http://iuc-backend.herokuapp.com/api/students/:id', {id: '@id'}, {
+		update: {
+			method: 'PATCH'
+		}
+	});
+});
+
+iucApp.factory('School', function($resource) {
+	return $resource('http://iuc-backend.herokuapp.com/api/schools/:id');
 });

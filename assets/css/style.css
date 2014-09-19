@@ -1,8 +1,38 @@
 /* Helper Classes */
-
 .center {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+}
+/* End Helper Classes */
+
+input {
+	width: 100%;
+}
+
+#signup-title {
+	padding-top: 40px;
+	font-size: 2em;
+	color: white;
+	text-shadow: 2px 2px #000;
+}
+
+#criteria1 {
+	background-color: #3EADFF;
+	width: 300px;
+	padding: 20px;
+	border-radius: 10px;
+	font-size: 1.5em;
+	margin-top: 60px;
+}
+
+.button {
+	background-color: #E03843;
+}
+
+@media all and (max-width: 1000px) {
+	#criteria1 {
+		width: 300px;
+	}
 }
