@@ -1,10 +1,15 @@
-var iucApp = angular.module('iucApp', ['ngRoute', 'iucControllers']);
+var iucApp = angular.module('iucApp', ['ngResource', 'ngRoute', 'iucControllers']);
 
-iucApp.config(['$routeProvider', function($routeProvider) {
+iucApp.config(['$routeProvider', function($routeProvider) { 
+
 	$routeProvider.
 	when('/home', {
 		templateUrl: 'partials/home.html',
 		controller: 'homeCtrl'
+	}).
+	when('/criteria1', {
+		templateUrl: 'partials/criteria1.html',
+		controller: 'criteria1Ctrl'
 	}).
 	when('/students', {
 		templateUrl: 'partials/students.html',
@@ -22,15 +27,23 @@ iucApp.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'partials/schoolprofile.html',
 		controller: 'schoolProfileCtrl'
 	}).
+	when('/resource', {
+		templateUrl: 'partials/resource.html',
+		controller: 'resourceCtrl'
+	}).
 	otherwise({
 		redirectTo: '/home'
 	});
 }]);
 
-// iucApp.factory('students', function($resource) {
-// 	var studentsService = $resource('/students/:student_id', {}, {
-// 		'create': { method: 'POST'},
-// 		'index': { method: 'GET', isArray: true },
-// 	});
-// 	return studentsService;
-// });
+iucApp.factory('Student', function($resource) {
+	return $resource('http://iuc-backend.herokuapp.com/api/students/:id', {id: '@id'}, {
+		update: {
+			method: 'PATCH'
+		}
+	});
+});
+
+iucApp.factory('School', function($resource) {
+	return $resource('http://iuc-backend.herokuapp.com/api/schools/:id');
+});

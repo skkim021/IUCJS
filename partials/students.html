@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <h1 class="studentTitle">&nbsp;International University Connection</h1>
 <hr>
 
@@ -7,6 +8,20 @@
 	<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Add Student</button>
 </div> -->
 <!-- 
+=======
+<h1 class="studentTitle">International University Connection</h1>
+<hr/><br/>
+<!-- Small modal -->
+<!-- <div style="text-align:right; margin-top:-140px; margin-right:20px; padding:0px 0px 0px 0px;">
+	<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" ng-click="addStudent()">Add Student</button>
+</div> -->
+
+ <!-- Small modal -->
+<div style="text-align:right; margin-top:-140px; margin-right:20px; padding:0px 0px 0px 0px;">
+  <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Add Student</button>
+</div>
+
+>>>>>>> 658b68d615690e687afe22795cb7df6a448acb56
 <div class="search">
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
@@ -14,11 +29,11 @@
 				<form id="student_form" ng-submit="addStudent()">
 					<fieldset>
 						<label type="newStudent" size="30">Please add a new student</label>
-							<div class="form-inline" role="form"><br/>
-								<input type="text" size="30" ng-model="newFirstName" placeholder="First Name"><br/>
-								<input type="text" size="30"ng-model="newLastName" placeholder="Last Name">
-							</div><br/>
-						<button type="submit" class="pure-button pure-button-primary">Submit</button> 
+						<div class="form-inline" role="form"><br/>
+							<input type="text" size="30" ng-model="newFirstName" placeholder="First Name"><br/>
+							<input type="text" size="30"ng-model="newLastName" placeholder="Last Name">
+						</div><br/>
+						<button type="submit" class="pure-button pure-button-primary">Submit</button>
 					</fieldset>
 				</form>
 			</div>
@@ -27,29 +42,35 @@
 </div>
  -->
 
-<div class="searchTable">
-	<h4><center>These are the students that matches with your school!<center></h4><br>
-	
-		<center><table class="pure-table pure-table-horizontal">
-		    <thead>
-		        <tr>
-		            <th>First Name</th>
-		            <th>Last Name</th>
-		            <th>Email</th>
-		        </tr>
-		    </thead>
+<!-- Test Code -->
+<!-- 	<form id="student_form" ng-submit="addStudent()">
+<input type="text" id="new_student_first_name" name="newStudentFirstName" ng-model="newFirstName" placeholder="First Name"></br>
+<input type="text" id="new_student_last_name" name="newStudentLastName" ng-model="newLastName" placeholder="Last Name"></br>
+<input type="button" id="contact_submit_btn" value="Add Student" class="btn btn-primary">               
+</form> -->
+<!-- 
+<button ng-click="addStudent()"> Add Student </button> -->
+<!-- End Test Code -->
 
-		    <tbody>
-		        <tr class="itemHolder" ng-repeat="student in students | filter:first_name | orderBy:orderStudents:direction" style="list-style-type:none">
-					
-		            <td><a href="#/studentprofile/{{students.indexOf(student)}}"> {{student.first_name }}</td>
-		            <td><a href="#/studentprofile/{{students.indexOf(student)}}">{{student.last_name }}</td>
-		            <td><a href="#/studentprofile/{{students.indexOf(student)}}">{{ student.email }}</td>
-		        </tr>
-		    </tbody>
-		</table>
-		</center>
+
+<div class="searchTable center">
+	<h4>These are the students that matches with your school!</h4><br>
+
+	<table class="pure-table pure-table-horizontal center">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr class="itemHolder" ng-repeat="student in students | filter:first_name | orderBy:orderStudents:direction" style="list-style-type:none">
+				<td><a href="#/studentprofile/{{students.indexOf(student)}}"> {{student.first_name }}</td>
+				<td><a href="#/studentprofile/{{students.indexOf(student)}}">{{student.last_name }}</td>
+				<td><a href="#/studentprofile/{{students.indexOf(student)}}">{{ student.email }}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
-
-		<!-- 	<p>&nbsp;There are {{students.length}} students in the database</p> -->
-

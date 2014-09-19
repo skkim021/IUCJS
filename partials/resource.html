@@ -1,0 +1,19 @@
+<div>
+	<label> Select Student ID</label>
+	<input ng-model="id"></input>
+
+	<button ng-click="getStudent()">Get Students</button>
+
+	<p>Student: {{ student }}</p>
+
+	<p>Students:</p>
+	<p ng-repeat="student in students">{{ student }}</p>
+
+
+     <form id="simple-form" ng-submit="addStudent()">
+         <input id="first-name" ng-model="newStudent.first_name" value="First Name" type="text"> </input>
+         <input id="last-name" ng-model="newStudent.last_name" value="Last Name" type="text"> </input>
+         <input id="submit" type="submit" value="Submit" class="btn btn-large btn-primary"></input>                  
+     </form>
+	<pre>form = {{newStudent | json}}</pre>
+</div>
