@@ -37,7 +37,7 @@ iucApp.config(['$routeProvider', function($routeProvider) {
 }]);
 
 iucApp.factory('Student', function($resource) {
-	return $resource('http://0.0.0.0:3000/api/students/:id', {id: '@id'}, {
+	return $resource('http://iuc-backend.herokuapp.com/api/students/:id', {id: '@id'}, {
 		update: {
 			method: 'PATCH'
 		}
@@ -45,5 +45,5 @@ iucApp.factory('Student', function($resource) {
 });
 
 iucApp.factory('School', function($resource) {
-	return $resource('http://0.0.0.0:3000/api/schools/:id');
+	return $resource('http://iuc-backend.herokuapp.com/api/schools/:id');
 });
