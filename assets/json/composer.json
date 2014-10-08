@@ -1,0 +1,106 @@
+@schools = 
+{
+  "0": {
+    "School_Name": "Harvard University",
+    "School_Address": "Soldiers Field  Boston,  MA",
+    "Deadline": {
+    	"Round 1: Sep 9, 2014", 
+    	"Round 2: Jan 5, 2015",
+    	"Round 3: Apr 6, 2015"
+    	},
+  	"Term_Begin": 8/29/2015,
+  	"TOEFL": 109,
+  	"GMAT": 727,
+  	"Region": "East"
+  },
+    "1": {
+    "School_Name": "Stanford University",
+    "School_Address": "655 Knight Way Stanford, CA",
+    "Deadline": "Round 1: Oct 1, 2014, Round 2: Jan 7, 2015, Round 3: Apr 1, 2015",
+  	"Term_Begin": 7/14/2015,
+  	"TOEFL": 100,
+  	"GMAT": 732,
+  	"Region": "West"
+  },
+    "2": {
+    "School_Name": "University of Pennsylvania(Wharton)",
+    "School_Address": "3730 Walnut Street Philadelphia, PA 19104",
+    "Deadline": "Round 1: Oct 1, 2014, Round 2: Jan 5, 2015, Round 3: Mar 26, 2015",
+  	"Term_Begin": 8/4/2015,
+  	"TOEFL": 100,
+  	"GMAT": 725,
+  	"Region": "East"
+  },
+    "3": {
+    "School_Name": "University of Chicago(Booth)",
+    "School_Address": "5807 S. Woodlawn Ave Chicago, IL 60637",
+    "Deadline": "Round 1: Sep 25, 2014, Round 2: Jan 6, 2015, Round 3: Apr 3, 2015",
+  	"Term_Begin": 8/4/2015,
+  	"TOEFL": 100,
+  	"GMAT": 725,
+  	"Region": "East"
+  },
+    "4": {
+    "School_Name": "(MIT) Massachusetts Institute of Technology (Sloan)",
+    "School_Address": "238 Main Street, E48-500 Cambridge, MA 02414",
+    "Deadline": "Round 1: Sep 25, 2014, Round 2: Jan 6, 2015, Round 3: Apr 3, 2015",
+  	"Term_Begin": 8/4/2015,
+  	"TOEFL": 100,
+  	"GMAT": 725,
+  	"Region": "East"
+  },
+    "5": {
+    "School_Name": "Northwestern University (Kellogg) ",
+    "School_Address": "545 Student Services Building Berkeley, CA 94720",
+    "Deadline": "Round 1: Oct 1, 2014, Round 2: Jan 7, 2015, Round 3: Apr 1, 2015",
+  	"Term_Begin": 8/26/2015,
+  	"TOEFL": 111,
+  	"GMAT": 692,
+  	"Region": "West"
+  },
+   "6": {
+    "School_Name": "University of California--Berkeley (Haas)",
+    "School_Address": "2001 Sheridan Road Evanston, IL 60208",
+    "Deadline": "Round 1: Sep 24, 2014, Round 2: Jan 7, 2015, Round 3: April 1, 2015",
+  	"Term_Begin": 9/2/2015,
+  	"TOEFL": 109,
+  	"GMAT": 713,
+  	"Region": "Central"
+  },
+ 	"7": {
+    "School_Name": "Columbia University",
+    "School_Address": "3022 Broadway, 216 Uris Hall New York, NY 10027",
+    "Deadline": "Round 1: Oct 8, 2014, Round 2: Apr 15, 2015",
+  	"Term_Begin": 8/25/2015,
+  	"TOEFL": "N/A",
+  	"GMAT": 716,
+  	"Region": "East"
+  },
+   	"8": {
+    "School_Name": "Dartmouth College (Tuck)",
+    "School_Address": "100 Tuck Hall Hanover, NH 03755",
+    "Deadline": "Round 1: Oct 8, 2014, Round 2: Nov 5, 2014, Round 3: Jan 6, 2015, Round 4: Apr 1, 2015",
+  	"Term_Begin": 8/10/2015,
+  	"TOEFL": "N/A",
+  	"GMAT": 716,
+  	"Region": "East"
+  },
+    "9": {
+    "School_Name": "New York University (Stern)",
+    "School_Address": "44 W. Fourth Street New York, NY 10012",
+    "Deadline": "Round 1: Oct 15, 2014, Round 2: Nov 15, 2014, Round 3: Jan 15, 2015, Round 4: Mar 15, 2015",
+  	"Term_Begin": 9/2/2015,
+  	"TOEFL": "N/A",
+  	"GMAT": 721,
+  	"Region": "East"
+  },
+     "10": {
+    "School_Name": "University of Michigan--Ann Arbor (Ross)",
+    "School_Address": "701 Tappan Street Ann Arbor, MI 48109",
+    "Deadline": "Round 1: Dec 1, 2014, Round 2: Feb 2, 2015",
+  	"Term_Begin": 9/2/2015,
+  	"TOEFL": "100",
+  	"GMAT": 646,
+  	"Region": "Central"
+  },
+}
