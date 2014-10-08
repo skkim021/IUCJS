@@ -1,11 +1,23 @@
 /* Helper Classes */
+
+
 .center {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+	margin-top: 5%;
 }
 /* End Helper Classes */
+
+#question {
+	background-color: white;
+	width: 300px;
+	padding: 20px;
+	border-radius: 10px;
+	/*font-size: 1.5em;*/
+	margin-top: 20%;
+}
 
 input {
 	width: 100%;

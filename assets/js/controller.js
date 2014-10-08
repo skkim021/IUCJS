@@ -4,7 +4,20 @@ var iucControllers = angular.module("iucControllers", []);
 // http://www.corsproxy.com/iuc-backend.herokuapp.com/schools/1.json
 
 // Home.
-iucControllers.controller("homeCtrl", function($scope, $http) {
+iucControllers.controller("homeCtrl", function($scope, Student, $location) {
+	$scope.newStudent = new Student();
+
+	var students = Student.query( function() {
+		console.log(students.length);
+		// Post
+		$scope.addStudent = function() {
+			Student.save($scope.newStudent);
+			$scope.newStudent = new Student();
+			setTimeout(function(){}, 3000);
+			$location.path("/studentprofile/" + students.length);
+
+		};
+	});
 
 });
 

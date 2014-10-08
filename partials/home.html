@@ -5,10 +5,40 @@
         <h3 class=""></h3>
     </div>
 
-    <div id="firstButton">
+<div id="question" class="center">
+    <form id="simple-form" ng-submit="addStudent()">
+        <label> Location </label><br/>
+       
+        <select name="mydropdown">
+            <option value="West">West</option>
+            <option value="Central">Central</option>
+            <option value="East">East</option>
+        </select><br/>
+        <label> (Optional) TOEFL Score </label><br/>
+        <input id="TOEFL" </input><br/><br/>
+        <a href="index.html#/studentprofile"><input id="submit" type="submit" value="Find My Matches" class="button btn btn-large btn-primary"></input></a>                
+    </form>
+
+</div> 
+
+
+   <!--  <div id="firstButton">
         <a class="pure-button schoolButton" href="index.html#/criteria1">Find Schools</a>
     </div>   
+
+<p class="center" id="signup-title"> SIGN UP FOR PERSONALIZED SCHOOL MATCHES </p>
+<div id="criteria1" class="center">
+    <form id="simple-form" ng-submit="addStudent()">
+        <label> First Name: </label><br/>
+        <input id="first-name" ng-model="newStudent.first_name" type="text"> </input><br/>
+        <label> Last Name: </label><br/>
+        <input id="last-name" ng-model="newStudent.last_name" type="text"> </input><br/><br/>
+        <input id="submit" type="submit" value="Find My Matches" class="button btn btn-large btn-primary"></input>                  
+    </form>
+<!--    <pre>form = {{newStudent | json}}</pre> -->
 </div>
+
+</div
 
 <div class="l-content">
     <div class="information pure-g">
